@@ -44,10 +44,8 @@ func printTable(d *Deck, open int, needed string) {
 	}
 }
 
-func promptCard() (c int) {
+func promptCard(in *bufio.Reader) (c int) {
 	c = -1
-
-	in := bufio.NewReader(os.Stdin)
 
 	for c < 0 {
 		fmt.Print("Karte aufdecken> ")
