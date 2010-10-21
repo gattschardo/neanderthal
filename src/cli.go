@@ -8,28 +8,28 @@ import (
 )
 
 const (
-	columns = 8
-	space = " "
-	empty = "  "
+	columns    = 8
+	space      = " "
+	empty      = "  "
 	closedCard = "X"
-	openCard = "[]"
-	newline = "\n"
+	openCard   = "[]"
+	newline    = "\n"
 )
 
 func printTable(d *Deck, open int, needed string) {
 	opened := false
 
-	for i, c := range(*d) {
+	for i, c := range *d {
 		if c.owner > 0 {
 			fmt.Print(empty)
 		} else if i == open {
 			fmt.Print(openCard)
 			opened = true
 		} else {
-			fmt.Printf("%2d", i + 1)
+			fmt.Printf("%2d", i+1)
 		}
 
-		if (i % columns) == columns - 1 {
+		if (i % columns) == columns-1 {
 			fmt.Print(newline)
 		} else {
 			fmt.Print(space)
@@ -59,7 +59,7 @@ func promptCard(in *bufio.Reader) (c int) {
 			os.Exit(1)
 		}
 
-		c, err = strconv.Atoi(s[0:len(s)-1])
+		c, err = strconv.Atoi(s[0 : len(s)-1])
 		if err != nil || c < 1 || c > deckSize {
 			fmt.Printf("Bitte gültige Zahl aus 1..%d eingeben!\n", deckSize)
 			c = -1

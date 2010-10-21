@@ -2,7 +2,7 @@ package main
 
 type Color int
 
-var colorName = []string {
+var colorName = []string{
 	"schwarz", "weiß",
 	"blau", "grün",
 	"gelb", "rot",
@@ -21,7 +21,7 @@ const (
 type Deck [deckSize]Card
 
 type Card struct {
-	name string
+	name  string
 	color Color
 	owner int
 }

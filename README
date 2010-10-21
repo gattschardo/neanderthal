@@ -2,6 +2,7 @@ Neanderthal is an implementation of the German game ``Im Neanderthal''.
 
 For more information, read the code, or buy the game.
 
-If you don't know German, this may not be for you, until I or someone else
-can be bothered to create a translation - which is unlikely, as this is thought
-mainly as a small exercise in the language Go, not as a real project.
+If you don't know German, this may not be for you, until I or someone
+else can be bothered to create a translation - which is unlikely, as
+this is thought mainly as a small exercise in the language Go, not as
+a real project.

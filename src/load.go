@@ -13,13 +13,13 @@ func readDeckFile(filename string) (d *Deck) {
 	col := Color(999)
 
 	fh, ok := os.Open(filename, os.O_RDONLY, 0)
-	
+
 	if ok != nil {
 		fmt.Fprintf(os.Stderr, "Could not open deck file `%s' for reading\n", filename)
 		os.Exit(1)
 	}
 
-	f := bufio.NewReader(fh);
+	f := bufio.NewReader(fh)
 
 	for line, ok := f.ReadString('\n'); ok == nil; line, ok = f.ReadString('\n') {
 		if last > deckSize {
@@ -27,15 +27,15 @@ func readDeckFile(filename string) (d *Deck) {
 			break
 		}
 
-		k := len(line)-2
+		k := len(line) - 2
 		if line[0] == '[' && line[k] == ']' {
-			for i, s := range(colorName) {
+			for i, s := range colorName {
 				if s == line[1:k] {
 					col = Color(i)
 				}
 			}
 		} else if line != "\n" && line[0] != '#' {
-			d[last] = Card{line[0:k+1], col, 0}
+			d[last] = Card{line[0 : k+1], col, 0}
 			last++
 		}
 	}

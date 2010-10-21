@@ -21,7 +21,9 @@ func main() {
 	next := needed()
 	fmt.Print("\nWurfholz werfen mit [Enter]> ")
 	_, err := in.ReadString('\n')
-	if err == os.EOF { return }
+	if err == os.EOF {
+		return
+	}
 	printTable(deck, -1, next.String())
 
 	for openend < deckSize {
@@ -43,7 +45,7 @@ func main() {
 					fmt.Printf("Falsche Farbe!\n")
 				}
 			} else {
-				fmt.Printf("Karte %d ist schon eingesammelt\n", c + 1)
+				fmt.Printf("Karte %d ist schon eingesammelt\n", c+1)
 				c = promptCard(in)
 			}
 		}
@@ -51,7 +53,9 @@ func main() {
 		next = needed()
 		fmt.Print("\nWurfholz werfen mit [Enter]> ")
 		s, err := in.ReadString('\n')
-		if err == os.EOF || s == "q\n" { return }
+		if err == os.EOF || s == "q\n" {
+			return
+		}
 		printTable(deck, -1, next.String())
 	}
 }
