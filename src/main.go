@@ -7,7 +7,7 @@ import (
 )
 
 const (
-	deckfile = "../cards"
+	deckfile = "../data/cards"
 )
 
 func main() {
